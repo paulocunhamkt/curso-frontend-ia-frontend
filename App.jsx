@@ -1,0 +1,421 @@
+/* src/App.jsx */
+
+/* Estilos para o layout geral da aplicação */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o rodapé fique na parte inferior */
+}
+
+main {
+  flex: 1; /* Faz com que o conteúdo principal ocupe o espaço restante */
+}
+
+/* Estilos para o Header */
+.header {
+  background-color: #282c34;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #61dafb; /* Cor do React */
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.header nav a:hover {
+  color: #61dafb;
+}
+
+/* Estilos para o Footer */
+.footer {
+  background-color: #282c34;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto; /* Empurra o rodapé para a parte inferior */
+}
+
+.footer .social-links a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+.footer .social-links a:hover {
+  color: #61dafb;
+}
+
+/* Estilos para a Landing Page */
+.landing-hero {
+  background-color: #f0f2f5;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.landing-hero h1 {
+  font-size: 3rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.landing-hero p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+.landing-buttons button {
+  margin: 0 10px;
+}
+
+.landing-section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.landing-section h2 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 2rem;
+}
+
+.features-grid, .content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-item, .content-item {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h3, .content-item h3 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+/* Estilos para formulários de Login/Registro */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px); /* Ajuste para considerar header/footer */
+  padding: 2rem;
+}
+
+.auth-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.auth-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="text"],
+.auth-form input[type="tel"] {
+  width: calc(100% - 20px); /* Ajuste para padding */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.auth-form .link-text {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.auth-form .link-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.auth-form .link-text a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para o Dashboard */
+.dashboard-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat-card h3 {
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.course-list h2 {
+  margin-bottom: 1.5rem;
+}
+
+.course-item {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-item h3 {
+  font-size: 1.3rem;
+  color: #222;
+}
+
+.course-item .progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  height: 10px;
+  width: 150px;
+  overflow: hidden;
+}
+
+.course-item .progress-fill {
+  background-color: #28a745;
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Estilos para CourseOverview, ModuleView, LessonView */
+.course-detail-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.course-detail-container h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.module-list .module-item {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.module-list .module-item h3 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.lesson-list .lesson-item {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lesson-list .lesson-item:last-child {
+  border-bottom: none;
+}
+
+.lesson-list .lesson-item a {
+  color: #333;
+  font-weight: 500;
+}
+
+.lesson-list .lesson-item a:hover {
+  color: #007bff;
+}
+
+.lesson-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.lesson-content .video-player {
+  width: 100%;
+  height: 400px;
+  background-color: #000;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.lesson-content .lesson-text {
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Estilos para Certificates e Profile */
+.certificates-container, .profile-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.certificate-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.certificate-card h3 {
+  font-size: 2rem;
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+
+.certificate-card p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.profile-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.profile-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.profile-form button {
+  margin-top: 1.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .landing-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .landing-hero p {
+    font-size: 1rem;
+  }
+
+  .features-grid, .content-grid, .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-form {
+    padding: 1.5rem;
+  }
+
+  .course-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .course-item .progress-bar {
+    width: 100%;
+  }
+
+  .lesson-content .video-player {
+    height: 250px;
+  }
+}
